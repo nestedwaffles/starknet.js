@@ -32,6 +32,9 @@ jobs:
         ports:
           - 5050:5050
 
+    # TODO - temporary conditional, remove if/when devnet RPC support is restored
+    if: ${{ (!inputs.use-rpc-devnet) }}
+
     env:
       TEST_PROVIDER_BASE_URL: ${{ secrets.TEST_PROVIDER_BASE_URL }}
       TEST_RPC_URL: ${{ secrets.TEST_RPC_URL }}

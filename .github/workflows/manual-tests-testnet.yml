@@ -7,14 +7,15 @@ jobs:
     strategy:
       max-parallel: 1 # needed until we get a seperate account for the rpc provider, until then running them in parallel would result in a nonce issue
       matrix:
-        name: [sequencer-goerli, rpc-goerli]
+        # name: [sequencer-goerli, rpc-goerli]
+        name: [sequencer-goerli]
         include:
           - name: sequencer-goerli
             ENABLE_SEQUENCER: true
             ENABLE_RPC: false
-          - name: rpc-goerli
-            ENABLE_SEQUENCER: false
-            ENABLE_RPC: true
+          # - name: rpc-goerli
+          #   ENABLE_SEQUENCER: false
+          #   ENABLE_RPC: true
 
     uses: ./.github/workflows/_test.yml
     secrets:
