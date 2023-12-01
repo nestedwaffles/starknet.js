@@ -36,9 +36,7 @@ export * from './utils/calldata/enum';
 export * from './utils/contract';
 export * from './utils/events';
 
-/**
- * Deprecated
- */
+
 /* eslint-disable import/first */
 import * as num from './utils/num';
 
